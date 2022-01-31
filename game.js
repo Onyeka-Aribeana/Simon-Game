@@ -4,6 +4,12 @@ let userClickedPattern = [];
 let randomChosenColour;
 let startToToggle = false;
 let level = 0;
+
+function startOver(){
+    level = 0;
+    gamePattern = [];
+    startToToggle = false; 
+}
  
 function checkAnswer(currentLevel){
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]){
@@ -19,10 +25,6 @@ function checkAnswer(currentLevel){
         $("body").addClass("game-over");
         setTimeout(function(){$("body").removeClass("game-over");}, 200)
         $("h1").text("Game Over, Press any key to restart")
-        level = 0;
-        gamePattern = [];
-        userClickedPattern = [];
-        startToToggle = false; 
     }
 }
 
